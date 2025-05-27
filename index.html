@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Webro Studio - Web Design & Development Bangladesh | Affordable Websites</title>
+    <meta name="description" content="Webro Studio offers professional & affordable web design, e-commerce stores, and digital solutions in Bangladesh. Reliable, creative, and client-first. Get your free quote today!">
+    <meta name="keywords" content="web design Bangladesh, web development Bangladesh, affordable website Bangladesh, e-commerce solutions, Webro Studio, website builder, portfolio website, business website Dhaka, web design company Dhaka, about Webro Studio">
+    <meta name="author" content="Webro Studio">
+    <link rel="canonical" href="https://www.webro-studio.github.io/"> <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> <link rel="manifest" href="/site.webmanifest"> <meta name="msapplication-TileColor" content="#0EA5E9">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.webro-studio.github.io/"> <meta property="og:title" content="Webro Studio - Web Design & Development Bangladesh | Affordable Websites">
+    <meta property="og:description" content="Webro Studio offers professional & affordable web design, e-commerce stores, and digital solutions in Bangladesh. Reliable, creative, and client-first.">
+    <meta property="og:image" content="https://www.webro-studio.github.io/images/social-share-image.jpg"> <meta property="og:image:alt" content="Webro Studio - Crafting Your Digital Future in Bangladesh">
+    <meta property="og:site_name" content="Webro Studio">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.webro-studio.github.io/"> <meta name="twitter:title" content="Webro Studio - Web Design & Development Bangladesh | Affordable Websites">
+    <meta name="twitter:description" content="Webro Studio offers professional & affordable web design, e-commerce stores, and digital solutions in Bangladesh.">
+    <meta name="twitter:image" content="https://www.webro-studio.github.io/images/social-share-image.jpg"> <meta name="twitter:image:alt" content="Webro Studio - Digital Solutions">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #475569;
+            background-color: #FFFFFF;
+        }
+        body.preloader-active {
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1E293B;
+        }
+
+        .text-primary-action { color: #0EA5E9; }
+        .bg-primary-action { background-color: #0EA5E9; }
+        .border-primary-action { border-color: #0EA5E9; }
+        .text-navy-accent { color: #1A3A6D; }
+        .bg-navy-accent { background-color: #1A3A6D; }
+        .section-bg-alt { background-color: #F1F5F9; }
+        .text-light { color: #F8FAFC; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E2E8F0; }
+        ::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0284C7; }
+
+        .hero-bg {
+            background: linear-gradient(rgba(14, 165, 233, 0.7), rgba(26, 58, 109, 0.8)),
+                        url('https://images.unsplash.com/photo-1653398615155-aecb61350afc?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            position: relative; overflow: hidden;
+        }
+        .hero-bg::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px; opacity: 0.3; z-index: 0;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            position: relative; overflow: hidden;
+        }
+        .glass-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.22);
+        }
+
+        /* Ensure card content is above pseudo-elements */
+        .glass-card > *:not(style):not(script):not(template) {
+            position: relative;
+            z-index: 1; /* Content above ::after hover effect */
+        }
+         .glass-card > svg { /* Lucide icons are SVG */
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Static subtle gradient (original ::before) */
+        .glass-card::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.0) 100%);
+            z-index: -1; /* Behind content and ::after effect */
+        }
+        /* Specific styling for glass cards on light backgrounds */
+        .section-bg-alt .glass-card, .bg-white .glass-card {
+             background: rgba(255, 255, 255, 0.6);
+             border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .section-bg-alt .glass-card::before, .bg-white .glass-card::before {
+            background: linear-gradient(145deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+        }
+
+        /* New animated gradient for hover (::after) */
+        .glass-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: conic-gradient(
+                from var(--gradient-angle, 0deg) at 50% 50%,
+                #0EA5E9, #1A3A6D, #38bdf8, #0EA5E9 /* Sky, Navy, Light Sky, Sky */
+            );
+            border-radius: inherit;
+            z-index: 0; /* Above ::before, but below content with z-index 1 */
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            animation: rotateGradient 6s linear infinite paused; /* Paused by default */
+        }
+        .glass-card:hover::after {
+            opacity: 0.25; /* Adjust for desired intensity */
+            animation-play-state: running; /* Start animation on hover */
+        }
+        @keyframes rotateGradient {
+            0% { --gradient-angle: 0deg; }
+            100% { --gradient-angle: 360deg; }
+        }
+
+
+        .about-us-image { /* This class is no longer used for an image, but keeping if needed elsewhere */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .pricing-card-starter::before { background: linear-gradient(145deg, rgba(224, 242, 254, 0.3) 0%, rgba(186, 230, 253, 0.1) 100%); }
+        .pricing-card-business::before { background: linear-gradient(145deg, rgba(56, 189, 248, 0.3) 0%, rgba(14, 165, 233, 0.15) 100%); }
+        .pricing-card-pro::before { background: linear-gradient(145deg, rgba(30, 58, 138, 0.3) 0%, rgba(26, 58, 109, 0.15) 100%); }
+        .pricing-card-popular-badge {
+            position: absolute; top: -1px; right: -1px;
+            background-color: #1A3A6D; color: white;
+            font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem;
+            border-top-right-radius: 1rem; border-bottom-left-radius: 0.75rem; z-index: 10; /* Above hover effects */
+        }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        .animate-on-scroll { opacity: 0; }
+        .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
+        .animate-fadeIn { animation: fadeIn 0.9s ease-out forwards; }
+        .animate-scaleIn { animation: scaleIn 0.7s ease-out forwards; }
+
+        .animation-delay-100 { animation-delay: 0.1s; } .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-300 { animation-delay: 0.3s; } .animation-delay-400 { animation-delay: 0.4s; }
+        .animation-delay-500 { animation-delay: 0.5s; } .animation-delay-600 { animation-delay: 0.6s; }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background-color: #FFFFFF;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.75s ease-out 0.3s, visibility 0.75s ease-out 0.3s; /* Delay fade out slightly */
+        }
+        #preloader.preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #E2E8F0; /* Slate 200 */
+            border-top-color: #0EA5E9; /* Primary Action Blue */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Webro Studio",
+      "image": "https://www.webro-studio.github.io/images/webro-logo.png",
+      "@id": "https://www.webro-studio.github.io/",
+      "url": "https://www.webro-studio.github.io/",
+      "telephone": "+8801234567890",
+      "email": "heywebro@gmail.com",
+      "priceRange": "৳",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Street Address",
+        "addressLocality": "Dhaka",
+        "postalCode": "1200",
+        "addressCountry": "BD"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "23.8103",
+        "longitude": "90.4125"
+      },
+      "description": "Webro Studio provides affordable and professional web design, development, and e-commerce solutions in Dhaka, Bangladesh. We build modern websites for businesses, portfolios, and online stores.",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"], "opens": "09:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "15:00" }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/yourprofile",
+        "https://www.instagram.com/yourprofile",
+        "https://www.linkedin.com/company/yourprofile"
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://www.webro-studio.github.io/#contact", "inLanguage": "en-US", "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/IOSPlatform", "http://schema.org/AndroidPlatform"] },
+        "result": { "@type": "Reservation", "name": "Get a Free Quote" }
+      }
+    }
+    </script>
+</head>
+<body class="bg-white"> <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50" aria-label="Main Navigation">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-primary-action">
+                Webro <span class="sr-only">(Go to homepage)</span>
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#home" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="#why-website" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">Why a Website?</a>
+                <a href="#services" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                <a href="#why-webro" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">Why Webro?</a>
+                <a href="#about-webro" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                <a href="#pricing" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                <a href="#faq" class="text-slate-700 hover:text-primary-action px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                <a href="#contact" class="bg-primary-action hover:bg-opacity-80 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Contact Us</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-700 focus:outline-none" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#home" class="block text-slate-700 hover:text-primary-action px-4 py-2">Home</a>
+            <a href="#why-website" class="block text-slate-700 hover:text-primary-action px-4 py-2">Why a Website?</a>
+            <a href="#services" class="block text-slate-700 hover:text-primary-action px-4 py-2">Services</a>
+            <a href="#why-webro" class="block text-slate-700 hover:text-primary-action px-4 py-2">Why Webro?</a>
+            <a href="#about-webro" class="block text-slate-700 hover:text-primary-action px-4 py-2">About Us</a>
+            <a href="#pricing" class="block text-slate-700 hover:text-primary-action px-4 py-2">Pricing</a>
+            <a href="#faq" class="block text-slate-700 hover:text-primary-action px-4 py-2">FAQ</a>
+            <a href="#contact" class="block bg-primary-action hover:bg-opacity-80 text-white px-4 py-3 text-center font-medium transition duration-300">Contact Us</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-bg py-24 md:py-36">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-on-scroll animate-fadeInUp">
+                Your Vision, Our Code: <span class="text-sky-200">Building Bangladesh's Digital Future.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white mb-10 max-w-3xl mx-auto animate-on-scroll animate-fadeInUp animation-delay-200">
+                Webro Studio - Reliable, Creative, and Client-First Web Solutions in Bangladesh. Let's be 'bros' in your web journey!
+            </p>
+            <a href="#contact" class="bg-primary-action hover:bg-opacity-80 text-white font-semibold py-4 px-10 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-on-scroll animate-fadeInUp animation-delay-400">
+                Get Your Free Quote
+            </a>
+        </div>
+    </header>
+
+    <section id="why-website" class="py-16 md:py-24 section-bg-alt" aria-labelledby="why-website-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="why-website-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12 animate-on-scroll animate-fadeInUp">Why Your Bangladesh Business Needs a Website in 2025</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card animate-on-scroll animate-scaleIn">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-action text-white mb-4"><i data-lucide="globe-2" class="h-6 w-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Global Reach, Local Trust</h3>
+                    <p class="text-slate-600 text-sm">Instantly connect with customers in Bangladesh and beyond, building credibility with a professional online presence.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-100">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-action text-white mb-4"><i data-lucide="clock" class="h-6 w-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Always Open for Business</h3>
+                    <p class="text-slate-600 text-sm">Your digital storefront, accessible to customers 24/7, anytime, anywhere in Bangladesh or globally.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-200">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-action text-white mb-4"><i data-lucide="shield-check" class="h-6 w-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Credibility & Professionalism</h3>
+                    <p class="text-slate-600 text-sm">A modern website builds trust and showcases your brand's professionalism to potential clients.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-action text-white mb-4"><i data-lucide="megaphone" class="h-6 w-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Cost-Effective Marketing</h3>
+                    <p class="text-slate-600 text-sm">Reach a wider audience in Bangladesh for less compared to traditional advertising methods.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-400">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-action text-white mb-4"><i data-lucide="message-circle" class="h-6 w-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Direct Customer Engagement</h3>
+                    <p class="text-slate-600 text-sm">Share updates, gather valuable feedback, and build lasting customer relationships online.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-500">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary-action text-white mb-4"><i data-lucide="award" class="h-6 w-6"></i></div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Showcase Your Excellence</h3>
+                    <p class="text-slate-600 text-sm">Effectively display your products, services, and portfolio to potential clients in Bangladesh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-white" aria-labelledby="services-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="services-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4 animate-on-scroll animate-fadeInUp">Our Web Design & Development Solutions</h2>
+            <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto animate-on-scroll animate-fadeInUp animation-delay-100">We empower individuals, startups, and businesses in Bangladesh with accessible, high-quality, and impactful digital solutions.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card animate-on-scroll animate-scaleIn">
+                    <i data-lucide="file-text" class="h-10 w-10 text-primary-action mb-3"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">One-Page / Portfolio Websites</h3>
+                    <p class="text-slate-600 text-sm">Ideal for individuals, freelancers, and showcasing specific projects with impact. Perfect for a quick online presence.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-100">
+                    <i data-lucide="briefcase" class="h-10 w-10 text-primary-action mb-3"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Business / Corporate Websites</h3>
+                    <p class="text-slate-600 text-sm">Professional, multi-page sites for SMBs and established companies in Bangladesh, built to enhance your brand.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-200">
+                    <i data-lucide="shopping-cart" class="h-10 w-10 text-primary-action mb-3"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">E-commerce Stores</h3>
+                    <p class="text-slate-600 text-sm">Fully functional online shops with payment integration (bKash, Nagad, etc.) and inventory management for Bangladesh.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-300">
+                    <i data-lucide="calendar-days" class="h-10 w-10 text-primary-action mb-3"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Booking & Appointment Systems</h3>
+                    <p class="text-slate-600 text-sm">For service-based businesses in Bangladesh requiring online scheduling capabilities for clients.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-400">
+                    <i data-lucide="layout-list" class="h-10 w-10 text-primary-action mb-3"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Blog & Media Sites</h3>
+                    <p class="text-slate-600 text-sm">Content-rich platforms for bloggers, news outlets, and media companies looking to engage audiences in Bangladesh.</p>
+                </div>
+                <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-500">
+                    <i data-lucide="wand-2" class="h-10 w-10 text-primary-action mb-3"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Website Redesign</h3>
+                    <p class="text-slate-600 text-sm">Modernizing outdated websites with improved UI/UX, mobile responsiveness, and functionality for better performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-webro" class="py-16 md:py-24 section-bg-alt" aria-labelledby="why-webro-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="why-webro-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12 animate-on-scroll animate-fadeInUp">Why Partner with <span class="text-primary-action">Webro Studio</span>?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card text-center animate-on-scroll animate-scaleIn">
+                    <i data-lucide="puzzle" class="h-12 w-12 text-primary-action mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Simplicity First</h3>
+                    <p class="text-slate-600 text-sm">We make the complex simple. Clear processes, designs, and communication for your web project.</p>
+                </div>
+                <div class="glass-card text-center animate-on-scroll animate-scaleIn animation-delay-100">
+                    <i data-lucide="eye" class="h-12 w-12 text-primary-action mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Transparent Partnership</h3>
+                    <p class="text-slate-600 text-sm">Open and honest. No hidden surprises, you're always in the loop with your project status.</p>
+                </div>
+                <div class="glass-card text-center animate-on-scroll animate-scaleIn animation-delay-200">
+                    <i data-lucide="thumbs-up" class="h-12 w-12 text-primary-action mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Reliable Delivery</h3>
+                    <p class="text-slate-600 text-sm">We deliver on our promises. Quality web solutions and deadlines you can count on.</p>
+                </div>
+                <div class="glass-card text-center animate-on-scroll animate-scaleIn animation-delay-300">
+                    <i data-lucide="lightbulb" class="h-12 w-12 text-primary-action mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Creative & Innovative</h3>
+                    <p class="text-slate-600 text-sm">Modern aesthetics, functional design, latest tech for standout websites in Bangladesh.</p>
+                </div>
+                <div class="glass-card text-center animate-on-scroll animate-scaleIn animation-delay-400">
+                    <i data-lucide="users" class="h-12 w-12 text-primary-action mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Client-Centric Approach</h3>
+                    <p class="text-slate-600 text-sm">Your goals are our priority. Solutions tailored for your success in the Bangladesh market.</p>
+                </div>
+                <div class="glass-card text-center animate-on-scroll animate-scaleIn animation-delay-500">
+                    <i data-lucide="accessibility" class="h-12 w-12 text-primary-action mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Accessible Solutions</h3>
+                    <p class="text-slate-600 text-sm">Professional web presence for everyone, from students to established businesses in Bangladesh.</p>
+                </div>
+            </div>
+            <p class="text-center text-xl text-slate-700 mt-12 font-semibold animate-on-scroll animate-fadeInUp animation-delay-600">
+                We're here to be your <span class="text-primary-action">"bro"</span> in the web world – reliable, supportive, and dedicated to your success in Bangladesh.
+            </p>
+        </div>
+    </section>
+
+    <section id="about-webro" class="py-16 md:py-24 bg-white" aria-labelledby="about-webro-heading">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 id="about-webro-heading" class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 animate-on-scroll animate-fadeInUp">
+                    About <span class="text-primary-action">Webro Studio</span>: Your Digital Partner in Bangladesh
+                </h2>
+                <p class="text-slate-600 max-w-3xl mx-auto animate-on-scroll animate-fadeInUp animation-delay-100">
+                    More than just developers, we're your dedicated allies in navigating the digital landscape.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto"> <div class="space-y-8"> <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="rocket" class="h-8 w-8 text-primary-action mt-1"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-semibold text-slate-700 mb-2">Our Mission: Empowering Your Digital Journey</h3>
+                                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                    Welcome to Webro Studio, your friendly neighborhood web experts right here in Bangladesh! We're a passionate team dedicated to helping individuals and businesses like yours thrive in the digital world. Our mission is simple: to craft stunning, effective, and affordable websites that not only look great but also deliver real results. We believe every great idea deserves a great online presence, and we're here to make that happen for you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-400">
+                         <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="users-2" class="h-8 w-8 text-primary-action mt-1"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-semibold text-slate-700 mb-2">Our Approach: The "Webro" Way</h3>
+                                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                    At Webro, we're more than just coders and designers; we're your 'bros' in this journey. This means we value clear communication, transparent processes, and a collaborative approach. We listen to your vision, understand your unique needs within the Bangladeshi market, and work hand-in-hand with you to build a digital solution that truly represents your brand and achieves your goals. Reliability, creativity, and your success are at the heart of everything we do.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card animate-on-scroll animate-scaleIn animation-delay-500">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i data-lucide="flag" class="h-8 w-8 text-primary-action mt-1"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-semibold text-slate-700 mb-2">Our Vision for Bangladesh</h3>
+                                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                    Founded with a vision to empower Bangladeshi businesses with top-notch digital tools, Webro Studio combines local market understanding with global web standards. We're a team of tech enthusiasts, creative thinkers, and problem solvers committed to making a positive impact, one website at a time. Let's build something amazing together and shape the digital future of Bangladesh!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-16 md:py-24 section-bg-alt" aria-labelledby="portfolio-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="portfolio-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12 animate-on-scroll animate-fadeInUp">Our Recent Masterpieces</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card overflow-hidden animate-on-scroll animate-scaleIn">
+                    <img src="images/project-alpha-corporate-website.jpg" alt="Webro Studio - Corporate Website Design for Project Alpha Tech Firm in Dhaka" class="w-full h-64 object-cover rounded-t-lg">
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Project Alpha: Tech Corp Site</h3>
+                        <p class="text-slate-600 text-sm">A stunning corporate website for a leading tech firm in Dhaka, Bangladesh.</p>
+                    </div>
+                </div>
+                <div class="glass-card overflow-hidden animate-on-scroll animate-scaleIn animation-delay-100">
+                    <img src="images/project-beta-ecommerce-artisan.jpg" alt="Webro Studio - E-commerce platform for Local Artisan in Bangladesh" class="w-full h-64 object-cover rounded-t-lg">
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Project Beta: Artisan E-Store</h3>
+                        <p class="text-slate-600 text-sm">An engaging e-commerce platform for a local artisan, featuring payment gateway integration.</p>
+                    </div>
+                </div>
+                <div class="glass-card overflow-hidden animate-on-scroll animate-scaleIn animation-delay-200">
+                    <img src="images/project-gamma-portfolio-creative.jpg" alt="Webro Studio - Portfolio site for Creative Professional in Bangladesh" class="w-full h-64 object-cover rounded-t-lg">
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Project Gamma: Creative Portfolio</h3>
+                        <p class="text-slate-600 text-sm">A sleek portfolio site for a creative professional to showcase their work.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-slate-600 animate-on-scroll animate-fadeInUp">Showcasing our web design and development work for clients across Bangladesh. <a href="#contact" class="text-primary-action hover:underline">Contact us</a> to see more!</p>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 md:py-24 bg-white" aria-labelledby="testimonials-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="testimonials-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12 animate-on-scroll animate-fadeInUp">What Our Clients Say</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <figure class="glass-card animate-on-scroll animate-scaleIn">
+                    <blockquote class="italic mb-4"><p class="text-slate-600">"Webro Studio transformed our online presence! Their team was professional, creative, and delivered beyond our expectations for our business in Bangladesh. Highly recommended!"</p></blockquote>
+                    <figcaption class="font-semibold text-slate-700">- Client A, CEO of Awesome Startup (Dhaka)</figcaption>
+                </figure>
+                <figure class="glass-card animate-on-scroll animate-scaleIn animation-delay-100">
+                    <blockquote class="italic mb-4"><p class="text-slate-600">"Working with Webro was a breeze. They understood our vision perfectly and created a website that truly represents our brand in the Bangladesh market. Thank you!"</p></blockquote>
+                    <figcaption class="font-semibold text-slate-700">- Client B, Founder of Cool Biz (Chittagong)</figcaption>
+                </figure>
+            </div>
+             <p class="text-center mt-8 text-slate-600 animate-on-scroll animate-fadeInUp">Add real testimonials here for social proof. Client feedback is invaluable!</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 section-bg-alt" aria-labelledby="pricing-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="pricing-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4 animate-on-scroll animate-fadeInUp">Affordable Web Design Plans for Every Need in Bangladesh</h2>
+            <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto animate-on-scroll animate-fadeInUp animation-delay-100">Competitive and accessible pricing, with tiered options to suit different needs and budgets in Bangladesh.</p>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="glass-card pricing-card-starter flex flex-col animate-on-scroll animate-scaleIn">
+                    <h3 class="text-2xl font-semibold text-primary-action mb-2">Starter Bro</h3>
+                    <p class="text-slate-500 mb-4">Ideal for students, freelancers, basic portfolios.</p>
+                    <p class="text-4xl font-bold text-slate-800 mb-1">৳8,000 <span class="text-lg font-normal text-slate-500">onwards</span></p>
+                    <p class="text-sm text-slate-500 mb-6">(One-Page/Portfolio)</p>
+                    <ul class="space-y-2 text-slate-600 mb-8 flex-grow text-sm">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Modern Single Page Design</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Mobile Responsive</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Basic Contact Form</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Quick Turnaround</li>
+                    </ul>
+                    <a href="#contact" class="w-full mt-auto text-center bg-primary-action hover:bg-opacity-80 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Get Started</a>
+                </div>
+                <div class="glass-card pricing-card-business flex flex-col relative border-2 border-primary-action shadow-2xl animate-on-scroll animate-scaleIn animation-delay-100">
+                    <span class="pricing-card-popular-badge">Popular</span>
+                    <h3 class="text-2xl font-semibold text-primary-action mb-2">Business Bro</h3>
+                    <p class="text-slate-500 mb-4">For small businesses, startups, local shops in Bangladesh.</p>
+                    <p class="text-4xl font-bold text-slate-800 mb-1">৳15,000 <span class="text-lg font-normal text-slate-500">onwards</span></p>
+                    <p class="text-sm text-slate-500 mb-6">(Business Site / Basic E-com / Booking)</p>
+                     <ul class="space-y-2 text-slate-600 mb-8 flex-grow text-sm">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Multi-Page Professional Site (3-5 pages)</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Custom Design Tailored to Your Brand</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Basic E-commerce/Booking Option</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>SEO Basics Setup for Bangladesh Search</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Social Media Integration</li>
+                    </ul>
+                    <a href="#contact" class="w-full mt-auto text-center bg-primary-action hover:bg-opacity-80 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Get Started</a>
+                </div>
+                <div class="glass-card pricing-card-pro flex flex-col animate-on-scroll animate-scaleIn animation-delay-200">
+                    <h3 class="text-2xl font-semibold text-primary-action mb-2">Pro Bro</h3>
+                    <p class="text-slate-500 mb-4">For established brands, larger e-commerce, custom needs.</p>
+                    <p class="text-4xl font-bold text-slate-800 mb-1">৳40,000 <span class="text-lg font-normal text-slate-500">onwards</span></p>
+                    <p class="text-sm text-slate-500 mb-6">(Advanced Corporate / Full E-com)</p>
+                     <ul class="space-y-2 text-slate-600 mb-8 flex-grow text-sm">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Advanced Custom Features & Functionality</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Full-Scale E-commerce Solutions for Bangladesh</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Performance Optimization & Security</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Advanced Integrations (CRM, APIs)</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="h-5 w-5 text-green-500 mr-2"></i>Priority Support & Maintenance Options</li>
+                    </ul>
+                    <a href="#contact" class="w-full mt-auto text-center bg-primary-action hover:bg-opacity-80 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Get Started</a>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-slate-600 animate-on-scroll animate-fadeInUp">All prices are indicative and in Bangladeshi Taka (BDT). <a href="#contact" class="text-primary-action hover:underline font-semibold">Contact us</a> for a detailed quote based on your project requirements.</p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 md:py-24 bg-white" aria-labelledby="faq-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12 animate-on-scroll animate-fadeInUp">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <details class="glass-card p-0 group transition-all duration-300 ease-in-out animate-on-scroll animate-fadeInUp">
+                    <summary class="font-semibold text-slate-700 cursor-pointer flex justify-between items-center list-none p-6 hover:bg-sky-50/50 rounded-t-lg group-open:rounded-b-none group-open:border-b group-open:border-sky-200/50">
+                        What types of websites do you specialize in for the Bangladesh market?
+                        <i data-lucide="chevron-down" class="h-5 w-5 text-primary-action group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="p-6 pt-3">
+                        <p class="text-slate-600 text-sm leading-relaxed">We build everything from personal portfolios and blogs to comprehensive business sites, booking systems, and robust e-commerce platforms tailored for businesses in Bangladesh. We focus on local payment gateway integrations (like bKash, Nagad) and solutions that resonate with the local audience.</p>
+                    </div>
+                </details>
+                <details class="glass-card p-0 group transition-all duration-300 ease-in-out animate-on-scroll animate-fadeInUp animation-delay-100">
+                    <summary class="font-semibold text-slate-700 cursor-pointer flex justify-between items-center list-none p-6 hover:bg-sky-50/50 rounded-t-lg group-open:rounded-b-none group-open:border-b group-open:border-sky-200/50">
+                        How long is the typical website development process?
+                        <i data-lucide="chevron-down" class="h-5 w-5 text-primary-action group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                     <div class="p-6 pt-3">
+                        <p class="text-slate-600 text-sm leading-relaxed">A simple one-page site might take 1-2 weeks. A more complex business or e-commerce site could take 4-8 weeks or more. The timeline depends on the project's complexity, features, content availability, and client feedback speed.</p>
+                    </div>
+                </details>
+                 <details class="glass-card p-0 group transition-all duration-300 ease-in-out animate-on-scroll animate-fadeInUp animation-delay-200">
+                    <summary class="font-semibold text-slate-700 cursor-pointer flex justify-between items-center list-none p-6 hover:bg-sky-50/50 rounded-t-lg group-open:rounded-b-none group-open:border-b group-open:border-sky-200/50">
+                        What's your process for building a website?
+                        <i data-lucide="chevron-down" class="h-5 w-5 text-primary-action group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="p-6 pt-3">
+                        <p class="text-slate-600 text-sm leading-relaxed">Our process is client-focused: 1. Discovery Call (understand your needs & goals in Bangladesh), 2. Project Scoping & Quotation, 3. Design & Development (with regular feedback loops), 4. Review & Revisions, 5. Final Payment & Launch, 6. Post-Launch Support & Training.</p>
+                    </div>
+                </details>
+                 <details class="glass-card p-0 group transition-all duration-300 ease-in-out animate-on-scroll animate-fadeInUp animation-delay-300">
+                    <summary class="font-semibold text-slate-700 cursor-pointer flex justify-between items-center list-none p-6 hover:bg-sky-50/50 rounded-t-lg group-open:rounded-b-none group-open:border-b group-open:border-sky-200/50">
+                        Do you provide website maintenance and support after launch?
+                        <i data-lucide="chevron-down" class="h-5 w-5 text-primary-action group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="p-6 pt-3">
+                        <p class="text-slate-600 text-sm leading-relaxed">Yes, we offer various website maintenance packages to ensure your site remains updated, secure, and performs optimally. We can discuss ongoing support options tailored to your needs.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-navy-accent text-light" aria-labelledby="contact-heading">
+        <div class="container mx-auto px-6 text-center">
+            <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll animate-fadeInUp">Ready to Build Your Digital Presence in Bangladesh?</h2>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto animate-on-scroll animate-fadeInUp animation-delay-200">
+                Let's discuss your project and how Webro Studio can help you achieve your online goals. We're excited to be your partner in the digital world!
+            </p>
+            <a href="mailto:heywebro@gmail.com" class="bg-primary-action hover:bg-opacity-80 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-on-scroll animate-fadeInUp animation-delay-400">
+                Email Us: heywebro@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-800 text-slate-300 py-12" aria-labelledby="footer-heading">
+        <div class="container mx-auto px-6">
+            <h2 id="footer-heading" class="sr-only">Footer</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Webro Studio</h3>
+                    <p class="text-sm">Your "bro" in the web world. Empowering businesses in Bangladesh with innovative digital solutions. Web design and development in Dhaka and beyond.</p>
+                    <p class="text-sm mt-2">Dhaka, Bangladesh</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-primary-action transition-colors duration-300">Our Services</a></li>
+                        <li><a href="#why-webro" class="hover:text-primary-action transition-colors duration-300">Why Choose Webro?</a></li>
+                        <li><a href="#about-webro" class="hover:text-primary-action transition-colors duration-300">About Us</a></li>
+                        <li><a href="#portfolio" class="hover:text-primary-action transition-colors duration-300">Portfolio</a></li>
+                        <li><a href="#pricing" class="hover:text-primary-action transition-colors duration-300">Pricing Plans</a></li>
+                        <li><a href="#faq" class="hover:text-primary-action transition-colors duration-300">FAQ</a></li>
+                        <li><a href="/privacy-policy.html" class="hover:text-primary-action transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html" class="hover:text-primary-action transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-3">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Webro Studio on Facebook" class="text-slate-300 hover:text-primary-action transition-colors duration-300"><i data-lucide="facebook" class="h-6 w-6"></i></a>
+                        <a href="#" aria-label="Webro Studio on Instagram" class="text-slate-300 hover:text-primary-action transition-colors duration-300"><i data-lucide="instagram" class="h-6 w-6"></i></a>
+                        <a href="#" aria-label="Webro Studio on LinkedIn" class="text-slate-300 hover:text-primary-action transition-colors duration-300"><i data-lucide="linkedin" class="h-6 w-6"></i></a>
+                        <a href="#" aria-label="Webro Studio on Twitter" class="text-slate-300 hover:text-primary-action transition-colors duration-300"><i data-lucide="twitter" class="h-6 w-6"></i></a>
+                    </div>
+                    <p class="text-sm mt-4">Email: <a href="mailto:heywebro@gmail.com" class="hover:text-primary-action transition-colors duration-300">heywebro@gmail.com</a></p>
+                    <p class="text-sm">Phone: <a href="tel:+8801234567890" class="hover:text-primary-action transition-colors duration-300">+880 123 456 7890</a></p>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> Webro Studio. All Rights Reserved. Professional Web Design in Bangladesh.</p>
+                <p>Designed with <i data-lucide="heart" class="inline-block h-4 w-4 text-red-500 fill-current" aria-hidden="true"></i> in Bangladesh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-primary-action text-white p-3 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 opacity-0 focus:outline-none focus:ring-2 focus:ring-primary-action focus:ring-opacity-50" aria-label="Back to Top">
+        <i data-lucide="arrow-up" class="h-6 w-6"></i>
+    </button>
+
+    <script>
+        // Add preloader active class to body immediately
+        document.body.classList.add('preloader-active');
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
+            lucide.createIcons();
+        });
+
+        // Close mobile menu and smooth scroll for anchor links
+        document.querySelectorAll('#mobile-menu a, .hidden.md\\:flex a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    // For mobile menu, always close
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                         menuIcon.setAttribute('data-lucide', 'menu');
+                         mobileMenuButton.setAttribute('aria-expanded', 'false');
+                         lucide.createIcons();
+                    }
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll Animations with Intersection Observer
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0');
+                    if (!entry.target.classList.contains('animate-fadeInUp') &&
+                        !entry.target.classList.contains('animate-scaleIn') &&
+                        !entry.target.classList.contains('animate-fadeIn')) {
+                        entry.target.classList.add('animate-fadeInUp');
+                    }
+                    observerInstance.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Update Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Preloader Logic
+        const preloader = document.getElementById('preloader');
+        window.addEventListener('load', () => {
+            if (preloader) {
+                preloader.classList.add('preloader-hidden');
+                document.body.classList.remove('preloader-active');
+            }
+        });
+        // Fallback to hide preloader if load event is too slow
+        setTimeout(() => {
+            if (preloader && !preloader.classList.contains('preloader-hidden')) {
+                preloader.classList.add('preloader-hidden');
+                document.body.classList.remove('preloader-active');
+            }
+        }, 3500); // Hide after 3.5 seconds max
+
+    </script>
+</body>
+</html>
