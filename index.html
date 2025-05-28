@@ -9,8 +9,11 @@
     <meta name="keywords" content="web design Bangladesh, web development Bangladesh, affordable website Bangladesh, e-commerce solutions, Webro Studio, website builder, portfolio website, business website Dhaka, web design company Dhaka, about Webro Studio">
     <meta name="author" content="Webro Studio">
     <link rel="canonical" href="https://www.webro-studio.github.io/"> 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> <link rel="manifest" href="/site.webmanifest"> <meta name="msapplication-TileColor" content="#0EA5E9">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest"> <meta name="msapplication-TileColor" content="#0EA5E9">
     <meta name="theme-color" content="#FFFFFF">
 
     <meta property="og:type" content="website">
@@ -61,7 +64,7 @@
         .hero-bg {
             background: linear-gradient(rgba(14, 165, 233, 0.7), rgba(26, 58, 109, 0.8)),
                         url('images/hero-bg.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: scroll; /* Changed from fixed to scroll for performance */
             position: relative; overflow: hidden;
         }
         .hero-bg::before {
@@ -71,99 +74,79 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.2);
-            -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.2); /* Base background for the glass effect */
+            -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); /* Slightly reduced blur */
+            border: 1px solid rgba(255, 255, 255, 0.25); /* Adjusted border */
+            border-radius: 1rem;
             padding: 1.5rem;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+            box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.15); /* Adjusted shadow */
             transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
             position: relative; overflow: hidden;
         }
         .glass-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.22);
+            transform: translateY(-5px); /* Slightly reduced hover transform */
+            box-shadow: 0 10px 30px 0 rgba(31, 38, 135, 0.20); /* Adjusted hover shadow */
         }
 
         /* Ensure card content is above pseudo-elements */
         .glass-card > *:not(style):not(script):not(template) {
             position: relative;
-            z-index: 1; /* Content above ::after hover effect */
+            z-index: 1; 
         }
          .glass-card > svg { /* Lucide icons are SVG */
             position: relative;
             z-index: 1;
         }
 
-
-        /* Static subtle gradient (original ::before) */
+        /* Static subtle gradient (original ::before) - This provides the main static gradient */
         .glass-card::before {
             content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             border-radius: inherit;
             background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.0) 100%);
-            z-index: -1; /* Behind content and ::after effect */
+            z-index: 0; /* Behind content */
         }
+        
         /* Specific styling for glass cards on light backgrounds */
         .section-bg-alt .glass-card, .bg-white .glass-card {
-             background: rgba(255, 255, 255, 0.6);
+             background: rgba(255, 255, 255, 0.6); /* Lighter base for cards on light backgrounds */
              border: 1px solid rgba(0, 0, 0, 0.05);
         }
         .section-bg-alt .glass-card::before, .bg-white .glass-card::before {
             background: linear-gradient(145deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
         }
 
-        /* New animated gradient for hover (::after) */
-        .glass-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: conic-gradient(
-                from var(--gradient-angle, 0deg) at 50% 50%,
-                #0EA5E9, #1A3A6D, #38bdf8, #0EA5E9 /* Sky, Navy, Light Sky, Sky */
-            );
-            border-radius: inherit;
-            z-index: 0; /* Above ::before, but below content with z-index 1 */
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out;
-            animation: rotateGradient 6s linear infinite paused; /* Paused by default */
-        }
-        .glass-card:hover::after {
-            opacity: 0.25; /* Adjust for desired intensity */
-            animation-play-state: running; /* Start animation on hover */
-        }
-        @keyframes rotateGradient {
-            0% { --gradient-angle: 0deg; }
-            100% { --gradient-angle: 360deg; }
-        }
+        /* REMOVED .glass-card::after and @keyframes rotateGradient for performance */
 
-
-        .about-us-image { /* This class is no longer used for an image, but keeping if needed elsewhere */
+        .about-us-image { 
             border-radius: 0.75rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
+        /* Pricing card specific gradients (subtle highlights) */
         .pricing-card-starter::before { background: linear-gradient(145deg, rgba(224, 242, 254, 0.3) 0%, rgba(186, 230, 253, 0.1) 100%); }
         .pricing-card-business::before { background: linear-gradient(145deg, rgba(56, 189, 248, 0.3) 0%, rgba(14, 165, 233, 0.15) 100%); }
         .pricing-card-pro::before { background: linear-gradient(145deg, rgba(30, 58, 138, 0.3) 0%, rgba(26, 58, 109, 0.15) 100%); }
+        
         .pricing-card-popular-badge {
             position: absolute; top: -1px; right: -1px;
             background-color: #1A3A6D; color: white;
             font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem;
-            border-top-right-radius: 1rem; border-bottom-left-radius: 0.75rem; z-index: 10; /* Above hover effects */
+            border-top-right-radius: 1rem; border-bottom-left-radius: 0.75rem; z-index: 10;
         }
 
         /* Animations */
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } /* Reduced translateY */
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } } /* Subtle scale */
 
         .animate-on-scroll { opacity: 0; }
-        .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
-        .animate-fadeIn { animation: fadeIn 0.9s ease-out forwards; }
-        .animate-scaleIn { animation: scaleIn 0.7s ease-out forwards; }
+        .animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; } /* Slightly faster */
+        .animate-fadeIn { animation: fadeIn 0.7s ease-out forwards; } /* Slightly faster */
+        .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; } /* Slightly faster */
 
-        .animation-delay-100 { animation-delay: 0.1s; } .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-300 { animation-delay: 0.3s; } .animation-delay-400 { animation-delay: 0.4s; }
-        .animation-delay-500 { animation-delay: 0.5s; } .animation-delay-600 { animation-delay: 0.6s; }
+        .animation-delay-100 { animation-delay: 0.05s; } .animation-delay-200 { animation-delay: 0.1s; } /* Reduced delays */
+        .animation-delay-300 { animation-delay: 0.15s; } .animation-delay-400 { animation-delay: 0.2s; }
+        .animation-delay-500 { animation-delay: 0.25s; } .animation-delay-600 { animation-delay: 0.3s; }
 
         /* Preloader Styles */
         #preloader {
@@ -175,19 +158,19 @@
             justify-content: center;
             align-items: center;
             opacity: 1;
-            transition: opacity 0.75s ease-out 0.3s, visibility 0.75s ease-out 0.3s; /* Delay fade out slightly */
+            transition: opacity 0.5s ease-out 0.2s, visibility 0.5s ease-out 0.2s; /* Faster fade out */
         }
         #preloader.preloader-hidden {
             opacity: 0;
             visibility: hidden;
         }
         .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #E2E8F0; /* Slate 200 */
-            border-top-color: #0EA5E9; /* Primary Action Blue */
+            width: 40px; /* Smaller spinner */
+            height: 40px;
+            border: 4px solid #E2E8F0; 
+            border-top-color: #0EA5E9; 
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite; /* Faster spin */
         }
         @keyframes spin {
             to { transform: rotate(360deg); }
@@ -460,8 +443,7 @@
         </div>
     </section>
 
-    <!--   Projects showcase   -->
-<!--     <section id="portfolio" class="py-16 md:py-24 section-bg-alt" aria-labelledby="portfolio-heading">
+    <!--     <section id="portfolio" class="py-16 md:py-24 section-bg-alt" aria-labelledby="portfolio-heading">
         <div class="container mx-auto px-6">
             <h2 id="portfolio-heading" class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12 animate-on-scroll animate-fadeInUp">Our Recent Masterpieces</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -674,20 +656,22 @@
             const isHidden = mobileMenu.classList.toggle('hidden');
             menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
             mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
-            lucide.createIcons();
+            lucide.createIcons(); // Re-render icons if 'x' or 'menu' icon changed
         });
 
         // Close mobile menu and smooth scroll for anchor links
-        document.querySelectorAll('#mobile-menu a, .hidden.md\\:flex a').forEach(link => {
+        document.querySelectorAll('#mobile-menu a, nav .hidden.md\\:flex a').forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 if (href && href.startsWith('#')) {
                     // For mobile menu, always close
-                    if (!mobileMenu.classList.contains('hidden')) {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                          mobileMenu.classList.add('hidden');
-                         menuIcon.setAttribute('data-lucide', 'menu');
-                         mobileMenuButton.setAttribute('aria-expanded', 'false');
-                         lucide.createIcons();
+                         if(menuIcon) {
+                            menuIcon.setAttribute('data-lucide', 'menu');
+                            mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            lucide.createIcons(); // Re-render menu icon
+                         }
                     }
                     const targetElement = document.querySelector(href);
                     if (targetElement) {
@@ -700,18 +684,20 @@
 
         // Back to Top Button
         const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0');
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-                backToTopButton.classList.add('opacity-0');
-            }
-        });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0');
+                    backToTopButton.classList.add('opacity-100');
+                } else {
+                    backToTopButton.classList.remove('opacity-100');
+                    backToTopButton.classList.add('opacity-0');
+                }
+            });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
         // Scroll Animations with Intersection Observer
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -719,10 +705,14 @@
         const observer = new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.remove('opacity-0');
-                    if (!entry.target.classList.contains('animate-fadeInUp') &&
-                        !entry.target.classList.contains('animate-scaleIn') &&
-                        !entry.target.classList.contains('animate-fadeIn')) {
+                    entry.target.classList.remove('opacity-0'); // Make element visible
+                    // Check which animation class is present and ensure it's applied
+                    if (entry.target.classList.contains('animate-fadeInUp') || 
+                        entry.target.classList.contains('animate-fadeIn') || 
+                        entry.target.classList.contains('animate-scaleIn')) {
+                        // Animation class is already there, browser will handle it
+                    } else {
+                         // Fallback default animation if none specified on element
                         entry.target.classList.add('animate-fadeInUp');
                     }
                     observerInstance.unobserve(entry.target);
@@ -732,23 +722,27 @@
         animatedElements.forEach(el => observer.observe(el));
 
         // Update Copyright Year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
 
         // Preloader Logic
         const preloader = document.getElementById('preloader');
-        window.addEventListener('load', () => {
-            if (preloader) {
+        if (preloader) {
+            window.addEventListener('load', () => {
                 preloader.classList.add('preloader-hidden');
                 document.body.classList.remove('preloader-active');
-            }
-        });
-        // Fallback to hide preloader if load event is too slow
-        setTimeout(() => {
-            if (preloader && !preloader.classList.contains('preloader-hidden')) {
-                preloader.classList.add('preloader-hidden');
-                document.body.classList.remove('preloader-active');
-            }
-        }, 3500); // Hide after 3.5 seconds max
+            });
+            // Fallback to hide preloader if load event is too slow
+            setTimeout(() => {
+                if (!preloader.classList.contains('preloader-hidden')) {
+                    preloader.classList.add('preloader-hidden');
+                    document.body.classList.remove('preloader-active');
+                }
+            }, 2500); // Reduced fallback timeout
+        }
 
     </script>
 </body>
